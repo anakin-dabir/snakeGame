@@ -130,7 +130,7 @@ function validateSnakeHead(snake, head) {
 	}
 
 	if (
-		head.positionX >= 0 &&
+		head.positionX >= 1 &&
 		head.positionX <= 30 &&
 		head.positionY >= 1 &&
 		head.positionY <= 51
@@ -248,8 +248,8 @@ export default function Game() {
 							<Board snake={snake} apple={apple} />
 						</div>
 					</div>
-					<div className='flex flex-col md:flex-col  self-center  gap-7 pt-4 md:pt-0 md:w-[181.38214px]'>
-						<div className=' bg-[#0114231e] w-full flex flex-col p-1 text-sm rounded-md gap-4'>
+					<div className='flex flex-col md:flex-col  self-center gap-3 md:gap-7 pt-4 md:pt-0 md:w-[181.38214px]'>
+						<div className=' bg-[#0114231e] w-full -mt-2 md:-mt-0 flex flex-col p-1 text-sm rounded-md gap-4'>
 							<p className='hidden md:flex'>// use keyboard arrows to play</p>
 							<div className='flex flex-col items-center justify-center mt-auto [&>svg]:cursor-pointer'>
 								<ArrowButton onClick={() => handleSnakeMoveWithButton('move_up')} disabled={!isStarted || gameOver || Math.abs(direction[1]) === 1}>
@@ -360,7 +360,7 @@ const ArrowButton = ({ disabled = false, onClick, children, className }) => {
 			<button
 				disabled={disabled}
 				onClick={onClick}
-				className={`${className} bg-[#011627D6] w-11 h-7 rounded-lg m-[2px] hover:bg-[#011627D6]/50 transition-colors`}>
+				className={`${className} bg-[#011627D6] w-14 h-9 md:w-11 md:h-7 rounded-lg m-[2px] hover:bg-[#011627D6]/50 transition-colors`}>
 				{children}
 			</button>
 		</>
