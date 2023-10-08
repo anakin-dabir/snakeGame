@@ -1,7 +1,7 @@
 import { useReducer, useState, useEffect, useCallback } from 'react';
 import Board from './Board';
-import Lose from '../../assets/huh.mp3';
-import Won from '../../assets/won.mp3';
+import Lose from '/huh.mp3';
+import Won from '/won.mp3';
 
 const playSound = (win = false) => {
 	const sound = win ? Won : Lose;
